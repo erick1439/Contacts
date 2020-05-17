@@ -1,44 +1,40 @@
 import React, { Component } from 'react';
-import Table from 'react-bootstrap/Table';
+import * as ReactBootstrap from 'react-bootstrap';
 import data from './data.json';
 class Home extends Component {
 
+  contacts = data;
 
-   render() { //Whenever our class runs, render method will be called automatically, it may have already defined in the constructor behind the scene.
+  renderContact = (contact, index) => {
+    return(
+      <tr key={index}>
+        <td>{index + 1}</td>
+        <td>{contact.fullName}</td>
+        <td>{contact.city}</td>
+        <td>{contact.email}</td>
+        <td>{contact.phoneNumber}</td>
+      </tr>
+    )
+  }
+
+   render() {
       return (
-        <Table striped bordered hover>
+        <ReactBootstrap.Table className="table">
         <thead>
           <tr>
-            <th>#</th>
-            <th>Gender</th>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Email</th>
-            <th>Phone Number</th>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">City</th>
+            <th scope="col">Email</th>
+            <th scope="col">Phone Number</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>1</td>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td colSpan="2">Larry the Bird</td>
-            <td>@twitter</td>
-          </tr>
+          {this.contacts.map(this.renderContact)}
         </tbody>
-      </Table>
+      </ReactBootstrap.Table>
       )
    }
 }
 
-export default Home //exporting a component make it reusable and this is the beauty of react
+export default Home

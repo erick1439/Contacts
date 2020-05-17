@@ -1,5 +1,7 @@
 import React, { Component } from "react";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import './Login.css';
+import axios from 'axios';
 
 export default class Login extends Component {
     constructor () {
@@ -24,22 +26,20 @@ export default class Login extends Component {
         });
     }
 
-    // submitHandler = event => {
-    //     event.preventDefault();
+    submitHandler = event => {
+        event.preventDefault();
     
-    //     axios.post('/login', this.state)
-    //         .then(response => {
-    //             console.log(response.data)
-    //         })
-    //         .catch(error => {
-    //             console.log(error);
-    //         });
-    // }
+        axios.post('/login', this.state)
+            .then(response => {
+            })
+            .catch(error => {
+                console.log(error);
+            });
+    }
 
-    // add /*onSubmit={this.submitHandler}*/ on form
     render() {
         return (
-            <form> 
+            <form onSubmit={this.submitHandler}> 
                 <h3>Sign In</h3>
 
                 <div className="form-group">

@@ -38,7 +38,7 @@ function App() {
   //       </div>
   //     </div>
   //   </div></Router>  
-  <Home/>
+    <Home/>
   );
 }
 
