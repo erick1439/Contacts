@@ -31,21 +31,10 @@ export default class SignUp extends Component {
     }
 
     submitHandler = event => {
-         event.preventDefault();
-        console.log(this.state);
-        axios.post('http://localhost:5000/login', this.state)
+    
+        axios.post('/register', this.state)
             .then(response => {
-                console.log(response);
-            })
-            .catch(error => {
-                console.log(error);
-            });
-    }
-
-    componentDidMount() {
-        axios.get('http://localhost:5000/')
-            .then(response => {
-                console.log(response)
+                console.log(response.data)
             })
             .catch(error => {
                 console.log(error);
@@ -81,6 +70,7 @@ export default class SignUp extends Component {
                 <p className="forgot-password text-right">
                     Already registered <a href="/">sign in?</a>
                 </p>
+                <p className="errorMessage">Error message</p>
             </form>
         );
     }

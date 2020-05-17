@@ -2,19 +2,54 @@ import React, { Component } from "react";
 import './Login.css';
 
 export default class Login extends Component {
+    constructor () {
+        super();
+
+        this.state = {
+            email: "",
+            password: ""
+        };
+
+        this.validateCredentials = this.validateCredentials.bind(this);
+    }
+
+    validateCredentials = event => {
+
+        const target = event.target;
+        const value = target.name === 'isGoing' ? target.checked : target.value;
+        const name = target.name;
+    
+        this.setState({
+          [name]: value
+        });
+    }
+
+    // submitHandler = event => {
+    //     event.preventDefault();
+    
+    //     axios.post('/login', this.state)
+    //         .then(response => {
+    //             console.log(response.data)
+    //         })
+    //         .catch(error => {
+    //             console.log(error);
+    //         });
+    // }
+
+    // add /*onSubmit={this.submitHandler}*/ on form
     render() {
         return (
-            <form>
+            <form> 
                 <h3>Sign In</h3>
 
                 <div className="form-group">
                     <label>Email address</label>
-                    <input type="email" className="form-control" placeholder="Enter email" />
+                    <input type="email" className="form-control" placeholder="Enter email" onChange={this.validateCredentials} name="email" />
                 </div>
 
                 <div className="form-group">
                     <label>Password</label>
-                    <input type="password" className="form-control" placeholder="Enter password" />
+                    <input type="password" className="form-control" placeholder="Enter password" onChange={this.validateCredentials} name="password" />
                 </div>
 
                 <div className="form-group">
