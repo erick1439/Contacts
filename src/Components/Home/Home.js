@@ -9,24 +9,30 @@ class Home extends Component {
     return(
       <tr key={index}>
         <td>{index + 1}</td>
-        <td>{contact.fullName}</td>
-        <td>{contact.city}</td>
-        <td>{contact.email}</td>
-        <td>{contact.phoneNumber}</td>
+        <td contenteditable="true">{contact.fullName}</td>
+        <td contenteditable="true">{contact.city}</td>
+        <td contenteditable="true">{contact.email}</td>
+        <td contenteditable="true">{contact.phoneNumber}</td>
+        <td>
+          <span>
+            <button type="button" className="btn-danger btn-sm">Remove</button>
+          </span>
+        </td>
       </tr>
     )
   }
 
    render() {
       return (
-        <ReactBootstrap.Table className="table">
-        <thead>
+        <ReactBootstrap.Table className="table-hover table-sm table-light">
+        <thead className="">
           <tr>
             <th scope="col">#</th>
             <th scope="col">Name</th>
             <th scope="col">City</th>
             <th scope="col">Email</th>
             <th scope="col">Phone Number</th>
+            <th scope="col">Actions</th>
           </tr>
         </thead>
         <tbody>
