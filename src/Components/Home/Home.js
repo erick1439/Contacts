@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import * as ReactBootstrap from 'react-bootstrap';
 import data from './data.json';
+
 class Home extends Component {
 
   contacts = data;
@@ -21,6 +22,8 @@ class Home extends Component {
       </tr>
     )
   }
+
+  // style={{marginTop: "50px"}} in table component
 
    render() {
       return (

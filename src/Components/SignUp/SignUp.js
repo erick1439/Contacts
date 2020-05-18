@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import axios from 'axios';
+import CredentialNavbar from '../CredentialNavbar/CredentialNavbar'
 
 export default class SignUp extends Component {
     constructor(props) {
@@ -45,6 +45,7 @@ export default class SignUp extends Component {
         return (
             <div className="auth-wrapper">
                 <div className="auth-inner">
+                    <CredentialNavbar/>
                     <form onSubmit={this.submitHandler}>
                         <h3>Sign Up</h3>
 

@@ -1,10 +1,7 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import './Login.css';
 import axios from 'axios';
+import CredentialNavbar from '../CredentialNavbar/CredentialNavbar'
 
-
-import Home from '../Home/Home'
 
 export default class Login extends Component {
     constructor () {
@@ -44,6 +41,7 @@ export default class Login extends Component {
         return (
             <div className="auth-wrapper">
                 <div className="auth-inner">
+                    <CredentialNavbar/>
                     <form onSubmit={this.submitHandler}> 
                         <h3>Sign In</h3>
 
