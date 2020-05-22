@@ -2,8 +2,6 @@ import React, { Component } from "react";
 import axios from 'axios';
 import CredentialNavbar from '../CredentialNavbar/CredentialNavbar'
 
-import { Link } from "react-router-dom";
-
 export default class Login extends Component {
     constructor () {
         super();
@@ -37,7 +35,7 @@ export default class Login extends Component {
                     console.log('Wrong email or password');
 
                 else
-                    this.props.history.push('/home');
+                    this.props.history.push('/home', response.data);
                 
             })
             .catch(error => {
