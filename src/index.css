@@ -72,11 +72,15 @@ body, html, .App, #root, .auth-wrapper {
   color: #167bff;
 }
 
+table {
+  margin-top: 55px;
+}
+
 .errorMessage {
   color: red;
   font-size: 12px;
   margin: 0;
   padding-top: 10px;
-  opacity: 0;
+  opacity: 1;
   text-align: center;
 }

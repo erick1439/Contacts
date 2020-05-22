@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import * as ReactBootstrap from 'react-bootstrap';
 import data from './data.json';
 import { useLocation } from 'react-router-dom';
+import HomeNavbar from '../HomeNavbar/HomeNavbar'
 
 function renderContact(contact, index) {
   return(
@@ -23,24 +24,29 @@ function renderContact(contact, index) {
 function Home(props) {
   
   const location = useLocation();  
-  const contacts = location.state.contacts;
+  const contacts = data// location.state.contacts;
+
+  console.log(location.state);
 
   return (
-    <ReactBootstrap.Table className="table-hover table-sm table-light">
-    <thead className="">
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">Name</th>
-        <th scope="col">City</th>
-        <th scope="col">Email</th>
-        <th scope="col">Phone Number</th>
-        <th scope="col">Actions</th>
-      </tr>
-    </thead>
-    <tbody>
-      {contacts.map(renderContact)}
-    </tbody>
-  </ReactBootstrap.Table>
+    <div>
+      <HomeNavbar/>
+      <ReactBootstrap.Table className="table-hover table-sm table-light">
+      <thead className="">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Name</th>
+          <th scope="col">City</th>
+          <th scope="col">Email</th>
+          <th scope="col">Phone Number</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {contacts.map(renderContact)}
+      </tbody>
+    </ReactBootstrap.Table>
+  </div>
   )
 }
 
