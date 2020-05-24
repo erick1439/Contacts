@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import * as ReactBootstrap from 'react-bootstrap';
 import data from './data.json';
 import { useLocation } from 'react-router-dom';
@@ -25,8 +25,7 @@ function Home(props) {
   
   const location = useLocation();  
   const contacts = data// location.state.contacts;
-
-  console.log(location.state);
+  const [count] = useState(data.length);
 
   return (
     <div>
