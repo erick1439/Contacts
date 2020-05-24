@@ -12,20 +12,36 @@ function MyVerticallyCenteredModal(props) {
         centered
       >
         <Modal.Header closeButton>
-          <Modal.Title id="contained-modal-title-vcenter">
+            <Modal.Title id="contained-modal-title-vcenter">
             Add User
-          </Modal.Title>
+            </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <h4>Add User</h4>
-          <p>
-            Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-            dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
-            consectetur ac, vestibulum at eros.
-          </p>
+            <form>
+                <div className="form-group">
+                    <label>Full name</label>
+                    <input type="text" className="form-control" placeholder="Enter full name" name="fullName" />
+                </div>
+
+                <div className="form-group">
+                    <label>City</label>
+                    <input type="text" className="form-control" placeholder="Enter City" name="city" />
+                </div>
+
+                <div className="form-group">
+                    <label>Email address</label>
+                    <input type="email" className="form-control" placeholder="Enter email" name="email" />
+                </div>
+
+                <div className="form-group">
+                    <label>Phone Number</label>
+                    <input type="password" className="form-control" placeholder="Enter phone number" name="phoneNumber" />
+                </div>   
+            </form>
         </Modal.Body>
         <Modal.Footer>
-          <Button onClick={props.onHide}>Close</Button>
+            <Button onClick={props.onHide}>Cancel</Button>
+            <Button onClick={props.onHide}>Add User</Button>
         </Modal.Footer>
       </Modal>
     );
@@ -43,7 +59,7 @@ export default function HomeNavbar() {
                 <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
                     <ul className="navbar-nav ml-auto">
                         <li className="nav-item">
-                            <Button variant="dark" onClick={() => setModalShow(true)}>Add user</Button>
+                            <Button variant="link" onClick={() => setModalShow(true)}>Add user</Button>
                         </li>
                         <li className="nav-item">
                             <Link className="nav-link" to={"/sign-in"}>Logout</Link>
@@ -53,7 +69,5 @@ export default function HomeNavbar() {
                 </div>
             </div>
         </nav> 
-
-    )
-    
+    ) 
 }
