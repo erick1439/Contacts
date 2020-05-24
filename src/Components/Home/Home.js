@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import * as ReactBootstrap from 'react-bootstrap';
 import data from './data.json';
 import { useLocation } from 'react-router-dom';

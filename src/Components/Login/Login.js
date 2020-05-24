@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from 'axios';
+import { Link } from "react-router-dom";
 import CredentialNavbar from '../CredentialNavbar/CredentialNavbar'
 
 export default class Login extends Component {
@@ -31,7 +32,7 @@ export default class Login extends Component {
         axios.post('/login', this.state)
             .then(response => {
 
-                if (response.data == 'Wrong email or password')
+                if (response.data === 'Wrong email or password')
                     console.log('Wrong email or password');
 
                 else
@@ -69,7 +70,7 @@ export default class Login extends Component {
                         </div>
                         <button type="submit" className="btn btn-primary btn-block">Submit</button>
                         <p className="forgot-password text-right">
-                            Forgot <a href="#">password?</a>
+                            Forgot <Link to={'/'}>password?</Link>
                         </p>
                     </form>
                 </div>

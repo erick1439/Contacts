@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from 'axios';
+import { Link } from "react-router-dom";
 import CredentialNavbar from '../CredentialNavbar/CredentialNavbar'
 
 export default class SignUp extends Component {
@@ -71,7 +72,7 @@ export default class SignUp extends Component {
 
                         <button type="submit" className="btn btn-primary btn-block">Sign Up</button>
                         <p className="forgot-password text-right">
-                            Already registered <a href="/">sign in?</a>
+                            Already registered <Link to={'/'}>sign in?</Link>
                         </p>
                         <p className="errorMessage"></p>
                     </form>
