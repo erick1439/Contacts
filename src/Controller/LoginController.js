@@ -3,6 +3,7 @@ import mongoose from 'mongoose';
 import UserSchema from '../Schemas/UserSchema';
 
 const User = mongoose.model('users', UserSchema);
+const SECRET = process.env.SECRET || 'Secreat123';
 
 const LoginController = (req, res) => {
 
@@ -20,7 +21,7 @@ const LoginController = (req, res) => {
             const token = jwt.sign(
                 {
                     email: user.email
-                }, 'Secrete123'
+                }, SECRET
             );
 
             return res.json({ status: 'ok', mssg: 'User Found', user: token});

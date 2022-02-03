@@ -3,12 +3,13 @@ import mongoose from 'mongoose';
 import UserSchema from '../Schemas/UserSchema';
 
 const User = mongoose.model('users', UserSchema);
+const SECRET = process.env.SECRET || 'Secreat123';
 
 const GetProfileController = (req, res) => {
 
     const token = req.headers['x-access-token'];
 
-    jwt.verify(token, 'Secrete123', async (err, decoded) => {
+    jwt.verify(token, SECRET, async (err, decoded) => {
 
         if (err) 
             return res.json({ status: 'error', mssg: error });

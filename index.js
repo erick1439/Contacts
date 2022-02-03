@@ -33,8 +33,4 @@ app.get('/', (req, res) => {
     res.send('App running');
 });
 
-if (process.env.NODE_ENV || 'production') {
-    app.use(express.static('client/build'));
-}
-
 app.listen(PORT);
