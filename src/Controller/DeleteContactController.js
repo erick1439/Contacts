@@ -9,7 +9,7 @@ const DeleteContactController = (req, res) => {
 
     const token = req.headers['x-access-token'];
 
-    jwt.verify(token, SECRET, async (err, decoded) => {
+    jwt.verify(token, SECRET, (err, decoded) => {
 
         if (err)
             return res.json({ status: 'error', mssg: error });

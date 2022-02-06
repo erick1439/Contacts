@@ -4,7 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon ./index.js --exec babel-node -e js"
+    "build": "cd client && npm install && npm run build",
+    "clean-up": "rm -rf server/*",
+    "server": "NODE_ENV=production node ./server/index.js",
+    "pre-start": "babel -d ./server ./src",
+    "start": "npm run build && npm run clean-up && npm run pre-start && npm run server \"npm run start --prefix client\"",
+    "dev": "nodemon ./src/index.js --exec babel-node -e js"
   },
   "keywords": [],
   "author": "",
@@ -13,7 +18,8 @@
     "cors": "^2.8.5",
     "express": "^4.17.2",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^6.1.9"
+    "mongoose": "^6.1.9",
+    "path": "^0.12.7"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
