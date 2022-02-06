@@ -10,7 +10,7 @@ const AddUserPopup = (props) => {
 
     const handler = async (event) => {
 
-        await fetch('http://localhost:4000/addContact', {
+        await fetch('/addContact', {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',

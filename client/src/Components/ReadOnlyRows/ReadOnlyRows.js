@@ -4,7 +4,7 @@ const ReadOnlyRows = ({contact, index, makeRowEditable, deleteContact}) => {
     const updateList = async (index, contact) => {
       const {id, email} = contact;
 
-      await fetch('http://localhost:4000/deleteContact', {
+      await fetch('/deleteContact', {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json',

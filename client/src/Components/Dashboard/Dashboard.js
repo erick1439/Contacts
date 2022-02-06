@@ -46,7 +46,7 @@ const Dashboard = () => {
 
   const populateScreen = async () => {
 
-    const response = await fetch('http://localhost:4000/getProfile', {
+    const response = await fetch('/getProfile', {
       headers: {
         'x-access-token': localStorage.getItem('token')
       }

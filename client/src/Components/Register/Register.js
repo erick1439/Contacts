@@ -14,7 +14,7 @@ const Register = () => {
     const submitHandler = async (event) => {
         event.preventDefault();
 
-        const response = await fetch('http://localhost:4000/register', {
+        const response = await fetch('/register', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'        

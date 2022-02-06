@@ -11,7 +11,7 @@ const EditRows = ({contact, index, updateRow, makeRowEditable}) => {
 
     const updateContact = async () => {
 
-        await fetch('http://localhost:4000/updateContact', {
+        await fetch('/updateContact', {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
